@@ -24,20 +24,20 @@ async function franceNetworkChart() {
         .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
     var link = svg.append("g")
-        .attr("stroke", "#ffe3d8")
-        .attr("stroke-opacity", 0.6)
         .selectAll("line")
         .data(links)
         .join("line")
-        .attr("stroke-width", 0.05);
+        .attr("stroke", "#ffe3d8")
+        .attr("stroke-opacity", 1)
+        .attr("stroke-width", 1);
 
-    const node = svg.append("g")
+    let node = svg.append("g")
         .selectAll("circle")
         .data(nodes)
         .join("circle")
-        .attr("r", 0.5)
+        .attr("r", 2)
         .attr("fill", "#f2d974")
-        .attr("fill-opacity", 0.4);
+        .attr("fill-opacity", 1);
 
     simulation.on("tick", () => {
         link
